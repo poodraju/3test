@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About JavScript</title>
+</head>
+<body>
+    <!-- Array -->
+    <p id="demo"></p>
+    <p id="spl"></p>
+    <button id="click me">click me</button>
+    <p id="demoo"></p>
+<script>
+let cars = ["bmw", "audi", "jagauar"];
+document.getElementById("demo").innerHTML=cars;
+
+let bmw = cars[0];
+document.getElementById("demo").innerHTML=bmw;
+
+//Array lenght property
+let len = cars.length;
+document.getElementById("demo").innerHTML=len;
+
+// Access the last array element
+
+let last = cars[cars.length -1]
+document.getElementById("demo").innerHTML=last;
+
+// Loop over an array item
+cars.forEach((items,index,array) => {console.log("item","index");})
+document.getElementById("demo").innerHTML=cars.toString();
+
+
+                    //Array methods
+
+//convert a array to String
+document.getElementById("demo").innerHTML=cars.toString;
+
+
+// Pop remove the element (save pop element in to a variable)
+let last1 = cars.pop();
+document.getElementById("demo").innerHTML=last1;
+let last2 = cars[cars.length -1];
+console.log(last2);
+
+//push method - adding new element
+cars.push("farari");
+document.getElementById("demo").innerHTML = cars;
+
+//Shift(): Remove the first element from an array
+cars.shift();
+document.getElementById("demo").innerHTML=cars;
+
+//unshift():Add an element at the beginning of an array
+cars.unshift("Hyundai");
+document.getElementById("demo").innerHTML=cars;
+
+//concat(): creat a new array by merging existing arrays
+let bikes = ["royal enfield", "pulsar", "hero"];
+let vechicle = cars.concat(bikes);
+document.getElementById("demo").innerHTML=cars;
+
+//sort(): Sort an array in ascending order
+vechicle.sort();
+document.getElementById("demo").innerHTML=vechicle;
+
+//reverse(): Reverse the elements of an array
+vechicle.reverse();
+document.getElementById("demo").innerHTML=vechicle;
+
+
+                                                //MAP, REDUCE AND FILTER
+/*Array.map()
+        The map() method creates a new array and performs a function on each array element*/
+        let num1 = [2,3,4,5,6,7]
+        let num2 = num1.map(multiply)
+        function multiply(value){
+            return value *2;
+        }
+        document.getElementById("demo").innerHTML=num2;
+
+
+
+// Array filter()
+            // The filter() method takes each elementnin an array and it applies a coditional statement agenist it
+
+            let num3 = num1.filter(comp);
+            function comp(value){
+                return value>4;
+            }
+            document.getElementById("demo").innerHTML=num3;
+
+
+// Array.reduce()
+                // The reduce() method reduces an array of values of values down to just one value using a function
+
+            let num4 = num1.reduce(sum)
+            function sum(total,value){
+                return total+value;
+            }
+            document.getElementById("demo").innerHTML=num4;
+
+
+
+                                //loops
+        //for loop, while loop, Breaking out of a loop,  Skipping a loop cycle
+
+        /*What is loop
+                        A loop is a programming construct that executes a piece of code as long as a condition is met
+
+                    LOOPS ==>
+                            Entry controlled
+                            exit controlled*/
+
+
+        // For loop
+        let x;
+        for(x=0; x<5; x++)
+        console.log(x)
+
+
+        //While loop
+        let y=1;
+        while(y<=5){
+            console.log(y)
+            y++
+        }
+
+
+        // Do-While loop
+        let z=5;
+        do{
+            console.log(z)
+            z++
+        }
+        while(z<10)
+
+        // Break out of loop
+        let r;
+        for (r=1;r<=10;r++){
+            console.log(r)
+            if(r==5)
+            break
+        }
+
+        //Skipping a loop cycle
+
+        let p;
+        for (p=1;p<=10;p++){
+            if(p==5)
+            continue
+            console.log(p)
+        }
+
+
+                                        //OBJECT
+        //name value
+
+        var student = {
+            name:"raju",
+            age: 23,
+            studies: "mechanical",
+        };
+        document.getElementById("demo").innerHTML = student.name +"of the age " +student.age + "studies" + student.studies;
+
+        // creating new kye word
+        var student = new Object();
+        student.name = "seepa",
+        student.age = 82,
+        student.studies = "computer science";
+        document.getElementById("demo").innerHTML = student.name +"of the age " +student.age + "studies" + student.studies;
+
+
+        //Use an object Constructor to creat and define a javaScript object
+
+      /*  function stud(name, age, studies){
+        this.name = name;
+        this.age = age;
+        this.studies = studies;
+        }
+        var student = stud("chris", 21, "computer science");
+        document.getElementById("demo").innerHTML = student.name +"of the age " +student.age + "studies" + student.studies;
+        */
+
+
+
+                                                    //OBJECT PROPERTIES
+                                                    var student = new Object();
+        var student = {
+         name : "seepa",
+         age : 82,
+         studies : "computer science",
+        };
+        student.age = 85
+        document.getElementById("demo").innerHTML = student.name +"of the age " +student.age + "studies" + student.studies;
+
+       var student = {
+         name : "seepa",
+         age : 82,
+         studies : "computer science",
+        };
+      // X = student.age
+      X = "age"
+       document.getElementById("demo").innerHTML = student.name +"of the age " + X +student.age + "studies" + student.studies;
+  
+
+
+                                                // OBJECT METHOD
+
+        let user ={
+            name:"raj",
+            age: 25,
+
+        };
+        function sayHi(){
+            alert("Hello!");
+        }
+        user.message =sayHi;
+        document.getElementById("spl").innerHTML = "Hi"+ user.name;
+        document.getElementById("click me").onclick =  user.message;
+
+
+                                                //ACCESSORS
+        var car = {
+            model:"Bmw 320d",
+            color: "Navy blue",
+            fuel_type:"diesel",
+            get fuel(){
+                return this.fuel_type
+            },
+        };
+        document.getElementById("demo").innerHTML = car.fuel;
+
+        var car = {
+            model:"Bmw 320d",
+            color: "Navy blue",
+            fuel_type:"",
+            set fuel(fuel){
+                this.fuel_type = fuel;
+            }
+        }
+        car.fuel = "petrol";
+        document.getElementById("demo").innerHTML = car.fuel_type;
+
+
+</script>   
+
+
+                <h1>this kye word</h>
+
+    <script>
+        var value = 50
+
+        function my_function(){
+        var value = 100
+        alert("value: "+ value)
+        alert("this value: "+ this.value)
+        }
+        my_function()
+        </script>
+        <script>
+            const random = {
+                name:"jhon",
+                info(){
+                    console.log("Hi! My name is" + this.name)
+                }
+            }
+            random.info();
+
+
+            const rand ={
+                Name:"guig",
+                video:["javascript", "this", "kyeword"],
+                info(){
+                    this.video.forEach(function(tag){
+                        console.log(this.Name,tag)
+                    })
+                }
+            }
+            rand.info()
+        </script>
+        <script>
+                                    //JAVASCRIPT FUNCTION
+            function myfunction(val){
+                document.getElementById("demoo").innerHTML = val*val
+            }
+            myfunction(5)
+
+
+                                        //function expression
+                let a = function(){
+                alert("hello! ")
+                }
+                let b = a
+                document.getElementById("demoo").innerHTML = b();
+
+
+                  </script>
+                  <script>
+                                        //function constru 
+                
+               /* var sfunction = new function("a","b","a+b")
+                var d = sfunction(2,3)
+                document.getElementById("demoo").innerHTML = d      */
+        </script>
+        <script>
+                                        // self-invoking functions
+
+                (function(){
+                    alert("hello welcome")
+                })()
+        </script>
+        <script>
+                                        //function as values
+        function product(f,g){
+            return f*g
+        }
+        let h = product(2,5)
+        document.getElementById("demoo").innerHTML = "this product is " +h
+
+        </script>
+        <script>
+                                    // function as objects
+
+        </script>
+
+        <h3>You want know more visit <em>w3school,mdn</em> or <b>javaTpoint</b></h3>
+
+                                        
+</body>
+</html>
